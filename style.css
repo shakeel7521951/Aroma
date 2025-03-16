@@ -12,7 +12,7 @@
   justify-content: space-between;
   align-items: center;
   background-color: #fff;
-  padding: 15px 20px;
+  padding: 15px 60px;
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -21,7 +21,7 @@
 
 /* Logo */
 .logo img {
-  width: 50px;
+  width: 60px;
   height: auto;
 }
 
