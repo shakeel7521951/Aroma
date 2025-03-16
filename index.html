@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js"
         crossorigin="anonymous"></script>
-        <script src="script.js"></script>
+    <script src="./Scripts.js"></script>
 </head>
 
 <body>
@@ -17,7 +17,7 @@
     <div class="overlay"></div>
 
     <!-- Navbar -->
-<nav class="navbar">
+    <nav class="navbar">
         <div class="logo">
             <img src="./assests/favicon.png" alt="Company Logo" loading="lazy">
         </div>
@@ -32,7 +32,7 @@
         <div class="menu-toggle">
             <i class="fas fa-bars"></i>
         </div>
-    </nav> 
+    </nav>
 
     <!-- Header section -->
     <section class="header headerOverlay" id="header">
@@ -181,6 +181,40 @@
         <p class="footer-text">© 2025 All Rights Reserved By​ Aroma Cup Chronicles</p>
     </footer>
 
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        const overlay = document.querySelector('.overlay');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            overlay.classList.toggle('active');
+        });
+
+        overlay.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            overlay.classList.remove('active');
+        });
+
+
+        // FAQ section 
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                faqItem.classList.toggle('active');
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            fetch("navbar.html")
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("navbar-container").innerHTML = data;
+                })
+                .catch(error => console.error("Error loading the navbar:", error));
+        });
+
+    </script>
 
 </body>
 
