@@ -63,6 +63,9 @@
     color: black;
     z-index: 1100;
   }
+  .navbar{
+    padding: 20px;
+  }
 
   /* Sidebar (Hidden by Default) */
   .nav-links {
